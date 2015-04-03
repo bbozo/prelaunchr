@@ -29,7 +29,7 @@ class UsersController < ApplicationController
             end
 
             flash[:error] = "Your IP address #{request.env['HTTP_X_FORWARDED_FOR']} has been prevented from activating any more subscriptions"
-            if cur_ip.count > 2
+            if cur_ip.count > 10
                 return redirect_to root_path
             else
                 cur_ip.count = cur_ip.count + 1
