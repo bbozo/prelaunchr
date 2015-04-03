@@ -52,7 +52,9 @@ class User < ActiveRecord::Base
     end
 
     def send_welcome_email
-        UserMailer.delay.signup_email(self)
-        #UserMailer.signup_email(self).deliver!
+        #UserMailer.delay.signup_email(self)
+        mail = UserMailer.signup_email(self).deliver!
+        File.open("public/last_mail.html", "w"){ |f| f.write mail.body }
+        mail
     end
 end

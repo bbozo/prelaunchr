@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
     def signup_email(user)
         @user = user
-        @url = "http://launch.nitrokey.com/"
+        @url = "http://launch.nitrokey.com"
         @twitter_message = "#Shaving is evolving. Excited for @harrys to launch."
 
         mail(:to => user.email, :subject => "Thanks for signing up!")
