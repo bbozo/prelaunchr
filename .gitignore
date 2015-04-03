@@ -15,6 +15,7 @@
 /tmp
 /lib/assets/*.csv
 /public/assets
+/public/last_mail.html
 
 .DS_Store
 
